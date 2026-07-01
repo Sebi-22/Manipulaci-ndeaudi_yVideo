@@ -1,0 +1,73 @@
+/* Reset básico para que todo se vea ordenado */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Estilos del título principal */
+h1 {
+    color: #c6f062;
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #c6f062;
+    padding-bottom: 10px;
+}
+
+/* Estilos de las secciones (contenedores) */
+section {
+    background-color: #1e1e1e;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+h2 {
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+/* Elementos de control */
+button {
+    background-color: #c6f062;
+    color: #121212;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #a8d14d;
+}
+
+input[type="range"] {
+    cursor: pointer;
+}
+
+/* Estilo específico para el Lightbox (modal) */
+.videoLightbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ajustes de responsive para videos */
+video {
+    max-width: 100%;
+    border-radius: 5px;
+}
