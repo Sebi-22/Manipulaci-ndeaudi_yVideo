@@ -1,4 +1,4 @@
-/* Reset básico para que todo se vea ordenado */
+/* Reset básico*/
 * {
     box-sizing: border-box;
     margin: 0;
@@ -30,7 +30,7 @@ section {
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 h2 {
@@ -55,19 +55,106 @@ button:hover {
     background-color: #a8d14d;
 }
 
+button:disabled {
+    background-color: #555;
+    color: #999;
+    cursor: not-allowed;
+}
+
 input[type="range"] {
     cursor: pointer;
 }
 
-/* Estilo específico para el Lightbox (modal) */
-.videoLightbox {
+/* Fila genérica para agrupar botones + sliders */
+.fila-controles {
     display: flex;
-    justify-content: center;
     align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+/* Nombre de pista actual (playlist) o texto de estado (grabador) */
+.nombre-pista {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #c6f062;
+}
+
+/* Utilidad para ocultar elementos sin sacarlos del DOM */
+.oculto {
+    display: none !important;
 }
 
 /* Ajustes de responsive para videos */
 video {
     max-width: 100%;
     border-radius: 5px;
+}
+
+.video-chico {
+    width: 300px;
+}
+
+/* Lightbox (modal) de video */
+.video-lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.video-lightbox.activo {
+    display: flex;
+}
+
+.video-lightbox video {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+}
+
+/* Canvas con filtros de video */
+.marco-canvas {
+    display: block;
+    background: #000;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    max-width: 100%;
+}
+
+/* Canvas del visualizador de audio */
+.canvas-visualizador {
+    display: block;
+    background: #000;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    max-width: 100%;
+}
+
+/* Preview de cámara para el grabador */
+.preview-grabador {
+    width: 100%;
+    max-width: 400px;
+    background: #000;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Enlace de descarga de la grabación */
+a[download] {
+    display: inline-block;
+    background-color: #c6f062;
+    color: #121212;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a[download]:hover {
+    background-color: #a8d14d;
 }
