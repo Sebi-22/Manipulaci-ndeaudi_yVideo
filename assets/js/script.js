@@ -322,7 +322,7 @@ function initCanvasFilter() {
         filaFiltros.appendChild(boton);
     }
 
-    var btnPlay = document.createElement("button");
+    let btnPlay = document.createElement("button");
     btnPlay.textContent = "▶ Reproducir";
     btnPlay.addEventListener("click", function () {
         if (video.paused) {
@@ -422,10 +422,10 @@ function initAudioVisualizer() {
         analizador.getByteFrequencyData(datosFrecuencia);
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        var anchoBarra = canvas.width / datosFrecuencia.length;
-        for (var i = 0; i < datosFrecuencia.length; i++) {
-            var valor = datosFrecuencia[i];
-            var alto = (valor / 255) * canvas.height;
+        let anchoBarra = canvas.width / datosFrecuencia.length;
+        for (let i = 0; i < datosFrecuencia.length; i++) {
+            let valor = datosFrecuencia[i];
+            let alto = (valor / 255) * canvas.height;
             ctx.fillStyle = "#c6f062";
             ctx.fillRect(i * anchoBarra, canvas.height - alto, anchoBarra - 2, alto);
         }
@@ -508,15 +508,15 @@ function initRecorder() {
             });
 
             mediaRecorder.addEventListener("stop", function () {
-                var blob = new Blob(fragmentos, { type: "video/webm" });
+                let blob = new Blob(fragmentos, { type: "video/webm" });
                 enlaceDescarga.href = URL.createObjectURL(blob);
                 enlaceDescarga.download = "grabacion.webm";
                 enlaceDescarga.className = "";
                 info.textContent = "¡Listo! Ya podés descargar tu grabación.";
 
                 // liberamos cámara y micrófono al terminar
-                var pistas = stream.getTracks();
-                for (var i = 0; i < pistas.length; i++) {
+                let pistas = stream.getTracks();
+                for (let i = 0; i < pistas.length; i++) {
                     pistas[i].stop();
                 }
             });
